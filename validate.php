@@ -5,7 +5,7 @@ class Validate {
     public static function isValidUsername($username) 
     {
         // check if the username is empty or less than 3 characters
-        if (empty($username) || strlen($username) < 3) {
+        if (empty($username) || strlen($username) <= 3) {
             return false;
         }
         // check if the username contains only letters and numbers
