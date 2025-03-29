@@ -1,0 +1,147 @@
+
+/* smooth scrolling and make the font roboto everywhere */
+html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background-color: rgb(244, 255, 244);
+}
+
+/* remove the margin on body */
+body {
+    margin: 0;
+}
+/* some simple styling on the header and footer */
+header, footer {
+    /* display in a row*/
+    display: flex;
+    flex-direction: row;
+    /* ensure maximum distance */
+    justify-content: space-between;
+    /* center the items vertically */
+    align-items: center;
+    color: white;
+    /* some other simple stylings */
+    background-color: darkgreen;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    min-height: 10vh;
+}
+
+/* for the header nav menu, also make it a flex */
+header nav menu {
+    display: flex;
+    /* remove the dots from the list items, and remove any unnessesary margin/padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* make each list item take up some more space, add a transition time for the hover effects */
+header nav menu li {
+    margin: 0 15px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+/* create a simple hover for a different color and rounded corners */
+header nav menu li:hover {
+    background-color: white;
+    border-radius: 5px;
+}
+/* change the color of the text on hover */
+header nav menu li:hover a {
+    color: darkgreen;
+}
+/* remove the underline from the links, and make them a bit bigger */
+header nav menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+/* for the headers of the forms, center and style simply */
+h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+}
+/* ensure the main section is at least 80vh */
+main {
+    min-height: 80vh;
+}
+/* add a bit of margin the h2 in the main(the form ones) to seperate from the header and the other form*/
+main h2 {
+    margin-top: 50px;
+}
+/* make forms flex box in columns and align everything */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+/* for each item of a form (all input/label divs and submit buttons) add some space around them */
+form * {
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+}
+form > input:last-child {
+    /* for the submit button, add some styling to make it a bit bigger and with rounded corners */
+    background-color: darkgreen;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5em;
+}
+/* simple hover for the submit */
+form > input:last-child:hover {
+    background-color: green;
+    border-radius: 2.5px;
+}
+
+/* for the error/utility message, add some styling to make it a red box with rounded corners that is centered */
+h3:last-child, h4:last-child {
+    font-size: 2.5em;
+    padding: .5em;
+    margin: auto;
+    margin-bottom: 2em;
+    text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: .5em;
+    width: 50%;
+}
+/* for success message, change the color */
+h4:last-child {
+    background-color: green;
+}
+
+/* the site starts to break at ~600px so change formatting to fix */
+@media screen and (max-width: 600px) {
+    /* make the header and footer flex in a column */
+    header, footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* make the input divs columns */
+    form > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    /* make the error/utility fill more width */
+    h3:last-child, h4:last-child {
+        width: 85%;
+        font-size: 1.5em;
+    }
+
+    
+}
